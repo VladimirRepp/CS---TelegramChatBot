@@ -3,7 +3,7 @@ Example of Telegram Chat Bot using Telegram.Bot API
 
 Using:
 - C#
-- Telegram.Bot
+- Telegram.Bot (v22.4.3)
 - .Net9
 - Console
 
