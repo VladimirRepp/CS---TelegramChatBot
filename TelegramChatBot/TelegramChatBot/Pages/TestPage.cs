@@ -36,15 +36,14 @@ namespace TelegramChatBot.Pages
         {
             var callbackQuery = update.CallbackQuery;
             var user = callbackQuery.From;
-
+            var chat = callbackQuery.Message.Chat;
+     
             if (callbackQuery == null)
             {
                 throw new Exception($"OnCallbackQuery: callbackQuery is null!");
             }
 
             Console.WriteLine($"{user.Username} ({user.Id}) нажал кнопку: {callbackQuery.Data}");
-
-            var chat = callbackQuery.Message.Chat;
 
             switch (callbackQuery.Data)
             {
@@ -81,15 +80,14 @@ namespace TelegramChatBot.Pages
         {
             Message? message = update.Message;
             User? user = message?.From;
-
+            var chat = message.Chat;
+            
             if (message == null)
             {
                 throw new Exception("OnMessage: message is null!");
             }
 
             Console.WriteLine($"{user.FirstName} ({user.Id}) написал сообщение: {message.Text}");
-
-            var chat = message.Chat;
 
             switch (message.Type)
             {
