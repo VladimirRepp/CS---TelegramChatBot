@@ -7,6 +7,10 @@ Using:
 - .Net9
 - Console
 
+Description:
+- v0.1
+- Page implementation: from the BasePage class onwards
+
 Example:
 
 ![1](https://github.com/user-attachments/assets/137fef0b-1040-4d76-b642-f656bacefc08)
