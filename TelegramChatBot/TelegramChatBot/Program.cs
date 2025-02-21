@@ -31,13 +31,14 @@ namespace TelegramChatBot
                 DropPendingUpdates = true
             };
             var cts = new CancellationTokenSource();
-
+            _botClient.StartReceiving(UpdateHandler, ErrorHandler, receiverOptions, cts.Token);
+        
+            Console.WriteLine($"Бот {me.Username} запущен ...");
+        
             // === Testing ===
             _testPage = new TestPage(0, _botClient);
             _testPage.Open();
             // ===============
-
-            _botClient.StartReceiving(UpdateHandler, ErrorHandler, receiverOptions, cts.Token);
 
             Console.WriteLine($"Бот {me.Username} запущен ...");
 
