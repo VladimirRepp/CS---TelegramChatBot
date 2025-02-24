@@ -6,6 +6,7 @@ Using:
 - Telegram.Bot (v22.4.3)
 - .Net9
 - Console
+- IDE: MVS 2022
 
 Description:
 - v0.1
