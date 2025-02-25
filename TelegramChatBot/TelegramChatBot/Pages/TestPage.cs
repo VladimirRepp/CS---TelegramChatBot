@@ -163,7 +163,7 @@ namespace TelegramChatBot.Pages
                     }
                     #endregion
 
-                    #region === Обработка replay ввода ===
+                    #region === Обработка replay команд ===
                     if (message.Text == "Привет, чат-бот!")
                     {
                         await BotClient.SendMessage(
