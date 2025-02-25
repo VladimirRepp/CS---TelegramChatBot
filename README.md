@@ -11,7 +11,6 @@ Using:
 Description:
 - v0.1
 - Page implementation: from the BasePage class onwards
-- Multithreading for page and client processing needs to be considered (?)
 
 Example:
 
