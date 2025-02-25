@@ -11,6 +11,7 @@ Using:
 Description:
 - v0.1
 - Page implementation: from the BasePage class onwards
+- Multithreaded optimization is needed
 
 Example:
 
