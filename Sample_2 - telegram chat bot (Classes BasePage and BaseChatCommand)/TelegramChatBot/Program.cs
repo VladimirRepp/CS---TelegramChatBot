@@ -11,10 +11,12 @@ namespace TelegramChatBot
 {
     internal class Program
     {
+        #region === Evens ===
         public delegate Task OnMessageHandlerDelegate(Update update);
         public delegate Task OnCallbackQueryDelegate(Update update);
         public static OnMessageHandlerDelegate? OnMessageHandlerEvent;
         public static OnMessageHandlerDelegate? OnCallbackQueryEvent;
+        #endregion
 
         private static TelegramBotClient _botClient;
         private static TestPage _testPage;
