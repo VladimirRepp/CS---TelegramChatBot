@@ -10,8 +10,10 @@ Using:
 
 Description:
 - v0.1
-- Page implementation: from the BasePage class onwards
-- Multithreaded optimization is needed
+- Multithreaded optimization is needed!
+- Sample_0: a simple example of using logic to process messages and create inline and reply keyboards
+- Sample_1: encapsulation of the page logic in a separate class, analogous to the Form class from WinForm
+- Sample_2: Sample_1 + encapsulation of the verification and execution of a chat action in a separate class, the Command pattern
 
 Example:
 
