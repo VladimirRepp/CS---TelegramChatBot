@@ -26,6 +26,11 @@ namespace TelegramChatBot.Pages
             _botClient = client;
         }
 
+        protected BasePage(TelegramBotClient client)
+        {
+            _botClient = client;
+        }
+        
         /// <summary>
         /// Открыть страницу: вывести начальную информацию страницы
         /// </summary>
