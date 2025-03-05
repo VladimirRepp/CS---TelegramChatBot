@@ -1,23 +1,17 @@
 ﻿using System.Configuration;
-using TelegramChatBot.Pages;
-using TelegramChatBot.Utils;
 using Telegram.Bot;
 using Telegram.Bot.Exceptions;
 using Telegram.Bot.Polling;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
+using Telegram.Bot.Types.ReplyMarkups;
+using TelegramChatBot.Utils;
 
 namespace TelegramChatBot
 {
     internal class Program
     {
-        public delegate Task OnMessageHandlerDelegate(Update update);
-        public delegate Task OnCallbackQueryDelegate(Update update);
-        public static OnMessageHandlerDelegate? OnMessageHandlerEvent;
-        public static OnMessageHandlerDelegate? OnCallbackQueryEvent;
-
         private static TelegramBotClient _botClient;
-        private static TestPage _testPage;
 
         private static async Task Main(string[] args)
         {
@@ -33,8 +27,7 @@ namespace TelegramChatBot
             var cts = new CancellationTokenSource();
 
             // === Testing ===
-            _testPage = new TestPage(0, _botClient);
-            _testPage.Open();
+            await CreateBotCommands();
             // ===============
 
             _botClient.StartReceiving(UpdateHandler, ErrorHandler, receiverOptions, cts.Token);
@@ -52,11 +45,11 @@ namespace TelegramChatBot
                 switch (update.Type)
                 {
                     case UpdateType.Message:
-                        OnMessageHandlerEvent?.Invoke(update);
+                        OnMessageHandler(update);
                         break;
 
                     case UpdateType.CallbackQuery:
-                        OnCallbackQueryEvent?.Invoke(update);
+                        OnCallbackQueryHandler(update);
                         break;
                 }
             }
@@ -85,13 +78,188 @@ namespace TelegramChatBot
             }
         }
 
+        private static async Task OnCallbackQueryHandler(Update update)
+        {
+            var callbackQuery = update.CallbackQuery;
+            var user = callbackQuery.From;
+
+            if (callbackQuery == null)
+            {
+                throw new Exception($"OnCallbackQuery: callbackQuery is null!");
+            }
+
+            Console.WriteLine($"{user.Username} ({user.Id}) нажал кнопку: {callbackQuery.Data}");
+
+            var chat = callbackQuery.Message.Chat;
+
+            switch (callbackQuery.Data)
+            {
+                case "button_2":
+                    await _botClient.AnswerCallbackQuery(callbackQuery.Id);
+
+                    await _botClient.SendMessage(
+                        chat.Id,
+                        $"Вы нажали на {callbackQuery.Data}"
+                        );
+                    break;
+
+                case "button_3":
+                    await _botClient.AnswerCallbackQuery(callbackQuery.Id, "Пример возможного текста!");
+
+                    await _botClient.SendMessage(
+                        chat.Id,
+                        $"Вы нажали на {callbackQuery.Data}"
+                        );
+                    break;
+
+                case "button_4":
+                    await _botClient.AnswerCallbackQuery(callbackQuery.Id, "Пример полноэкранного текста!", showAlert: true);
+
+                    await _botClient.SendMessage(
+                        chat.Id,
+                        $"Вы нажали на {callbackQuery.Data}"
+                        );
+                    break;
+            }
+        }
+
+        private static async Task OnMessageHandler(Update update)
+        {
+            Message? message = update.Message;
+            User? user = message?.From;
+
+            if (message == null)
+            {
+                throw new Exception("OnMessage: message is null!");
+            }
+
+            Console.WriteLine($"{user.FirstName} ({user.Id}) написал сообщение: {message.Text}");
+
+            var chat = message.Chat;
+
+            switch (message.Type)
+            {
+                case MessageType.Text:
+
+                    #region === Обработка текстовых команд ===
+                    if (message.Text == "/start")
+                    {
+                        await _botClient.SendMessage(
+                            chat.Id,
+                            "Выберите тип клавиатуру: \n" +
+                            "/inline\n" +
+                            "/reply\n");
+
+                        return;
+                    }
+
+                    if (message.Text == "/inline")
+                    {
+                        var inlineKeyboard = new InlineKeyboardMarkup(
+                            new List<InlineKeyboardButton[]>()
+                            {
+                                        new InlineKeyboardButton[]
+                                        {
+                                            InlineKeyboardButton.WithUrl("Кнопка №1: гиперссылка на сайт", "https://habr.com/"),
+                                            InlineKeyboardButton.WithCallbackData("Кнопка №2: некоторое действие", "button_2"),
+                                        },
+                                        new InlineKeyboardButton[]
+                                        {
+                                            InlineKeyboardButton.WithCallbackData("Кнопка №3: пример текста", "button_3"),
+                                            InlineKeyboardButton.WithCallbackData("Кнопка №4: пример полноэкранного текста", "button_4"),
+                                        },
+                            });
+
+                        await _botClient.SendMessage(
+                             chat.Id,
+                            "Выбрана inline клавиатура!",
+                            replyMarkup: inlineKeyboard);
+
+                        return;
+                    }
+
+                    if (message.Text == "/reply")
+                    {
+                        var replyKeyboard = new ReplyKeyboardMarkup(
+                            new List<KeyboardButton[]>()
+                            {
+                                        new KeyboardButton[]
+                                        {
+                                            new KeyboardButton("/start"),
+                                        },
+                                        new KeyboardButton[]
+                                        {
+                                            new KeyboardButton("/inline"),
+                                            new KeyboardButton("/reply")
+                                        },
+                                        new KeyboardButton[]
+                                        {
+                                            new KeyboardButton("Привет, чат-бот!"),
+                                            new KeyboardButton("Пока, чат-бот!")
+                                        }
+                            })
+                        {
+                            ResizeKeyboard = true,
+                        };
+
+                        await _botClient.SendMessage(
+                            chat.Id,
+                            "Выбрана reply клавиатура!",
+                            replyMarkup: replyKeyboard);
+
+                        return;
+                    }
+                    #endregion
+
+                    #region === Обработка replay ввода ===
+                    if (message.Text == "Привет, чат-бот!")
+                    {
+                        await _botClient.SendMessage(
+                            chat.Id,
+                            $"Привет, {user.FirstName}!",
+                            replyParameters: message.MessageId);
+
+                        return;
+                    }
+
+                    if (message.Text == "Пока, чат-бот!")
+                    {
+                        await _botClient.SendMessage(
+                            chat.Id,
+                            $"До встречи, {user.FirstName}!",
+                            replyParameters: message.MessageId);
+
+                        return;
+                    }
+                    #endregion
+
+                    break;
+
+                default:
+                    await _botClient.SendMessage(
+                        chat.Id,
+                        "Нераспознанный ввод ...");
+                    return;
+            }
+        }
+
+        private static async Task CreateBotCommands()
+        {
+            var bot_commands = new[]
+          {
+                new BotCommand { Command = "start", Description = "Начать" },
+                new BotCommand { Command = "stop", Description = "Закончить" }
+            };
+
+            await _botClient.SetMyCommands(bot_commands);
+        }
+
         private static void Exiting()
         {
             Console.WriteLine("Command: stop called");
             Console.WriteLine("Startup exit ...");
 
-            // todo for exit
-            _testPage.Close();
+            // todo for exit ...
 
             Console.WriteLine("Exited");
         }

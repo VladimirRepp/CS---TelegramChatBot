@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7FE/BVF1T5U=",
+  "dgSpecHash": "4DFEnZ7HuY4=",
   "success": true,
-  "projectFilePath": "F:\\Сетевое программирование\\Sample_6 - telegram chat bot\\TelegramChatBot\\TelegramChatBot\\TelegramChatBot.csproj",
+  "projectFilePath": "C:\\Users\\Vladimir\\Desktop\\Sample_0 - telegram chat bot (Simple logic)\\TelegramChatBot\\TelegramChatBot.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Vladimir\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\8.0.0\\microsoft.extensions.configuration.abstractions.8.0.0.nupkg.sha512",
     "C:\\Users\\Vladimir\\.nuget\\packages\\microsoft.extensions.configuration.binder\\8.0.0\\microsoft.extensions.configuration.binder.8.0.0.nupkg.sha512",

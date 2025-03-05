@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\Сетевое программирование\\Sample_6 - telegram chat bot\\TelegramChatBot\\TelegramChatBot\\TelegramChatBot.csproj": {}
+    "C:\\Users\\Vladimir\\Desktop\\Sample_0 - telegram chat bot (Simple logic)\\TelegramChatBot\\TelegramChatBot.csproj": {}
   },
   "projects": {
-    "F:\\Сетевое программирование\\Sample_6 - telegram chat bot\\TelegramChatBot\\TelegramChatBot\\TelegramChatBot.csproj": {
+    "C:\\Users\\Vladimir\\Desktop\\Sample_0 - telegram chat bot (Simple logic)\\TelegramChatBot\\TelegramChatBot.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Сетевое программирование\\Sample_6 - telegram chat bot\\TelegramChatBot\\TelegramChatBot\\TelegramChatBot.csproj",
+        "projectUniqueName": "C:\\Users\\Vladimir\\Desktop\\Sample_0 - telegram chat bot (Simple logic)\\TelegramChatBot\\TelegramChatBot.csproj",
         "projectName": "TelegramChatBot",
-        "projectPath": "F:\\Сетевое программирование\\Sample_6 - telegram chat bot\\TelegramChatBot\\TelegramChatBot\\TelegramChatBot.csproj",
+        "projectPath": "C:\\Users\\Vladimir\\Desktop\\Sample_0 - telegram chat bot (Simple logic)\\TelegramChatBot\\TelegramChatBot.csproj",
         "packagesPath": "C:\\Users\\Vladimir\\.nuget\\packages\\",
-        "outputPath": "F:\\Сетевое программирование\\Sample_6 - telegram chat bot\\TelegramChatBot\\TelegramChatBot\\obj\\",
+        "outputPath": "C:\\Users\\Vladimir\\Desktop\\Sample_0 - telegram chat bot (Simple logic)\\TelegramChatBot\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
