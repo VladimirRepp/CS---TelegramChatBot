@@ -15,8 +15,7 @@ Description:
 
 Example Sample_0:
 =====
-
-![1](https://github.com/user-attachments/assets/137fef0b-1040-4d76-b642-f656bacefc08)
+The result is in the chatbot:
 
 ![2](https://github.com/user-attachments/assets/3ce7c925-ae95-4c98-b7d8-aee6bb95b3c4)
 
@@ -34,10 +33,13 @@ Example Sample_0:
 
 ![image](https://github.com/user-attachments/assets/648483e9-e56d-421f-9f64-7ca8e81255c9)
 
+The result is on the server:
+
 ![9](https://github.com/user-attachments/assets/0490c6e6-e773-4f3b-ad61-9560076eefee)
 
 Example Sample_1:
 =====
+The result is in the chatbot:
 
 ![image](https://github.com/user-attachments/assets/87b43f41-63fa-4f7e-ba08-5f2078a0f32d)
 
