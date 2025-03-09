@@ -3,21 +3,17 @@ Example of Telegram Chat Bot using Telegram.Bot API
 
 Using:
 =====
-- C#
-- Telegram.Bot (v22.4.3)
-- .Net9
-- Console
+- Platform: C#, .Net9, Console
+- Packages: Telegram.Bot (v22.4.3), System.Configuration.ConfigurationManager (9.0.2)
 - IDE: MVS 2022
 
 Description:
 =====
 - v0.1
-- Multithreaded optimization is needed!
 - Sample_0: a simple example of using logic to process messages and create inline and reply keyboards and crate bot commands
-- Sample_1: Sample_0 + encapsulation of the page logic in a separate class, analogous to the Form class from WinForm
-- Sample_2: Sample_1 + encapsulation of the verification and execution of a chat action in a separate class, the Command pattern
+- Sample_1: use separation of user states so that each user sees only their interface and works independently of others
 
-Example:
+Example Sample_0:
 =====
 
 ![1](https://github.com/user-attachments/assets/137fef0b-1040-4d76-b642-f656bacefc08)
@@ -39,6 +35,15 @@ Example:
 ![image](https://github.com/user-attachments/assets/648483e9-e56d-421f-9f64-7ca8e81255c9)
 
 ![9](https://github.com/user-attachments/assets/0490c6e6-e773-4f3b-ad61-9560076eefee)
+
+Example Sample_1:
+=====
+
+![image](https://github.com/user-attachments/assets/87b43f41-63fa-4f7e-ba08-5f2078a0f32d)
+
+![image](https://github.com/user-attachments/assets/e5ac6f38-d761-44ff-bb44-2ea2abb6e3bf)
+
+
 
 
 
