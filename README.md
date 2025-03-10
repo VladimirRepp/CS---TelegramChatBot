@@ -11,7 +11,7 @@ Description:
 =====
 - v0.1
 - Sample_0: a simple example of using logic to process messages and create inline and reply keyboards and crate bot commands
-- Sample_1: use separation of user states so that each user sees only their interface and works independently of others. The current state of the users is stored locally.
+- Sample_1: use separation of user states so that each user sees only their interface and works independently of others. The current state of the users is stored locally. Using MVS pattern for chat commands.
 
 Example Sample_0:
 =====
