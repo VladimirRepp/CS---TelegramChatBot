@@ -48,6 +48,10 @@ The result is in the chatbot:
 
 ![image](https://github.com/user-attachments/assets/e5ac6f38-d761-44ff-bb44-2ea2abb6e3bf)
 
+Contact with the developer
+=====
+telegram @Vladimir_Repp
+
 
 
 
