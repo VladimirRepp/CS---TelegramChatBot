@@ -62,7 +62,7 @@ namespace TelegramChatBot.Commands
                );
         }
 
-        public async Task TeacherLoginCallbackCommandAsync(long userId, ITelegramBotClient botClient, Update update)
+        private async Task TeacherLoginCallbackCommandAsync(long userId, ITelegramBotClient botClient, Update update)
         {
             var t_chat = update.CallbackQuery.Message.Chat;
 
