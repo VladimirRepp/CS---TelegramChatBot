@@ -32,7 +32,14 @@ namespace TelegramChatBot.Commands
                 );
         }
 
-        public virtual async Task ExecuteMessageCommandAsync(long userId, ITelegramBotClient botClient, Update update){
+        protected async Task DeleteTimerMessage(int waitMilliseconds, ITelegramBotClient botClient, long chatId, int messageId)
+        {
+          await Task.Delay(waitMilliseconds);
+          await botClient.DeleteMessage(chatId, messageId);
+        }
+        
+        public virtual async Task ExecuteMessageCommandAsync(long userId, ITelegramBotClient botClient, Update update)
+        {
             var messaage = update.Message;
 
             if (_commands.TryGetValue(messaage.Text, out var command))
