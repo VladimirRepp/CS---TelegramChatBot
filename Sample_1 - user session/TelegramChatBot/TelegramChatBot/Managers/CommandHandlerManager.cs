@@ -1,9 +1,7 @@
-﻿using System.Collections.Concurrent;
 using Telegram.Bot;
 using Telegram.Bot.Types;
 using TelegramChatBot.Commands;
 using TelegramChatBot.Global;
-using TelegramChatBot.Models;
 
 namespace TelegramChatBot.Managers
 {
@@ -74,7 +72,7 @@ namespace TelegramChatBot.Managers
                 return;
 
             string data = callback.Data;
-            if (!data.StartsWith("button_"))
+            if (!data.StartsWith(ButtonNames.START_NAME_BUTTON))
             {
                 var t_chat = callback.Message.Chat;
                 await _commonCommands.UnrecognizedMessage(botClient, t_chat);
