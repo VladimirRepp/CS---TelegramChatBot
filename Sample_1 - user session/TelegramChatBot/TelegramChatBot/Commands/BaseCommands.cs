@@ -34,8 +34,13 @@ namespace TelegramChatBot.Commands
 
         protected async Task DeleteTimerMessage(int waitMilliseconds, ITelegramBotClient botClient, long chatId, int messageId)
         {
-          await Task.Delay(waitMilliseconds);
-          await botClient.DeleteMessage(chatId, messageId);
+           await Task.Delay(waitMilliseconds);
+           await botClient.DeleteMessage(chatId, messageId);
+        }
+
+        protected async Task DeleteMessage(ITelegramBotClient botClient, long chatId, int messageId)
+        {
+           await botClient.DeleteMessage(chatId, messageId);
         }
         
         public virtual async Task ExecuteMessageCommandAsync(long userId, ITelegramBotClient botClient, Update update)
