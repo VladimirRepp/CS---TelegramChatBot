@@ -1,4 +1,4 @@
-﻿using Telegram.Bot.Types;
+using Telegram.Bot.Types;
 using Telegram.Bot;
 using TelegramChatBot.Managers;
 using Utils;
@@ -44,19 +44,41 @@ namespace TelegramChatBot.Handlers
 
         public async Task HandleUpdateAsync(ITelegramBotClient botClient, Update update, CancellationToken token)
         {
-            if (update.Message is not null)
+            Chat? t_chat = null;
+
+            try
             {
-                long userId = update.Message.From.Id;
-                await Task.Run(() => ProcessUserMessageRequest(userId, botClient, update));
+                if (update.Message is not null)
+                {
+                    long userId = update.Message.From.Id;
+                    t_chat = update.Message.Chat;
+
+                    await Task.Run(() => ProcessUserMessageRequest(userId, botClient, update));
+                }
+                else if (update.CallbackQuery is not null)
+                {
+                    long userId = update.CallbackQuery.From.Id; 
+                    t_chat = update.CallbackQuery.Message.Chat;
+
+                    await Task.Run(() => ProcessUserCallbackRequest(userId, botClient, update));
+                }
+                else
+                {
+                    t_chat = update.Message.Chat;
+                    await _commandHandlerManager.UnrecognizedMessage(botClient, t_chat);
+                }
             }
-            else if (update.CallbackQuery is not null)
+            catch (Exception ex) 
             {
-                long userId = update.CallbackQuery.From.Id; // chat = update.CallbackQuery.Message.Chat;
-                await Task.Run(() => ProcessUserCallbackRequest(userId, botClient, update));
-            }
-            else {
-                var t_chat = update.Message.Chat;
-                await _commandHandlerManager.UnrecognizedMessage(botClient, t_chat);
+                Logger.Instance.Log($"UpdateHandler.HandleUpdateAsync(Exception): {ex.Message}", LogLevel.Error);
+
+                if (t_chat == null)
+                    return;
+
+                await botClient.SendMessage(
+                    t_chat.Id,
+                    "Возникла ошибка на сервере ..."
+                    );
             }
         }
     }
