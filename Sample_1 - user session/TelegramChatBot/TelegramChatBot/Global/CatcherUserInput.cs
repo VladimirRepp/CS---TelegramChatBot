@@ -5,7 +5,7 @@ using Utils;
 
 namespace TelegramChatBot.Global
 {
-    public class CatcherUserInput
+    public class CatcherUserMessageInput
     {
         private static CatcherUserInput INSTANCE;
         private static readonly object PADLOCK = new object();
