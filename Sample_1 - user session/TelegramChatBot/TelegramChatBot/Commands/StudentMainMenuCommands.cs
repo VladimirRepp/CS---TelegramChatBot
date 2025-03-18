@@ -68,7 +68,7 @@ namespace TelegramChatBot.Commands
                 $"Введи какой нибудь текст, я отвечу на него!"
             );
 
-            CatcherUserInput.Instance.HandlerAdd(userId, OnButton2CatchUserInput);
+            CatcherUserMessageInput.Instance.HandlerAdd(userId, OnButton2CatchUserInput);
         }
 
         private async Task Button3CallbackCommandAsync(long userId, ITelegramBotClient botClient, Update update)
@@ -79,7 +79,7 @@ namespace TelegramChatBot.Commands
                 $"Напиши два целых числа через пробел!"
             );
 
-            CatcherUserInput.Instance.HandlerAdd(userId, OnButton3CatchUserInput);
+            CatcherUserMessageInput.Instance.HandlerAdd(userId, OnButton3CatchUserInput);
         }
 
         private async Task BackCallbackCommandAsync(long userId, ITelegramBotClient botClient, Update update)
