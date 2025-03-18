@@ -24,9 +24,9 @@ namespace TelegramChatBot.Managers
             _teacherMainMenuCommands = new(sessionManager);
         }
 
-        private async Task<bool> TryCatchUserInput(long userId, ITelegramBotClient botClient, Message message)
+        private async Task<bool> TryCatchUserMessageInput(long userId, ITelegramBotClient botClient, Message message)
         {
-            return await CatcherUserInput.Instance.TryInvokeHandler(userId, botClient, message); 
+            return await CatcherUserMessageInput.Instance.TryInvokeHandler(userId, botClient, message); 
         }
 
         public async Task ExecuteCommandForMessageAsync(long userId, ITelegramBotClient botClient, Update update)
