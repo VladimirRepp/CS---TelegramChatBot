@@ -39,7 +39,7 @@ namespace TelegramChatBot.Managers
                 return;
             }
 
-            if (CatcherUserInput.Instance.IsCatch)
+            if (CatcherUserMessageInput.Instance.IsCatch)
             {
                if(await TryCatchUserInput(userId, botClient, message))
                     return;
