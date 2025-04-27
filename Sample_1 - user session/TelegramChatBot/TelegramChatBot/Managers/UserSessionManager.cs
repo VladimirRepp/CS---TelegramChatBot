@@ -25,9 +25,16 @@ namespace TelegramChatBot.Managers
             return _sessions.TryGetValue(userId, out var state) ? state.CurrentState : "default";
         }
 
-        public void SetUserState(long userId, string state)
+        public UserSession SetUserState(long userId, string state)
         {
-            _sessions[userId].CurrentState = state;
-        }
+             _sessions[userId].CurrentState = state;
+             return _sessions[userId];
+         }
+
+         public UserSession SetUserRole(long userId, string role)
+         {
+             _sessions[userId].Role = role;
+             return _sessions[userId];
+         }
     }
 }
