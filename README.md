@@ -15,6 +15,7 @@ Description:
   * user sessions to separate the current state and the user's role are stored locally (can be moved to the database);
   * the MVC pattern for running chat commands;
   * user input interceptor.
+- - Sample_2: simple example of message processing, coding, and sending a response
 
 Contact with the developer
 =====
