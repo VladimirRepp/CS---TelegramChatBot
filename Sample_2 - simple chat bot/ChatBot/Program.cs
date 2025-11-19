@@ -4,7 +4,7 @@ using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
 
 // Замените на ваш токен от BotFather
-string botToken = "BotName";
+string botToken = "YourBotToken";
 
 // Создаем клиент бота
 var botClient = new TelegramBotClient(botToken);
@@ -104,4 +104,5 @@ Console.WriteLine("Для остановки нажмите Enter...");
 Console.ReadLine();
 
 // Остановка бота
+
 cts.Cancel();
