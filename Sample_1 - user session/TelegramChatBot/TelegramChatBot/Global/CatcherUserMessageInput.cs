@@ -1,4 +1,4 @@
-﻿using System.Collections.Concurrent;
+using System.Collections.Concurrent;
 using Telegram.Bot;
 using Telegram.Bot.Types;
 using Utils;
@@ -7,13 +7,13 @@ namespace TelegramChatBot.Global
 {
     public class CatcherUserMessageInput
     {
-        private static CatcherUserInput INSTANCE;
+        private static CatcherUserMessageInput INSTANCE;
         private static readonly object PADLOCK = new object();
         private ConcurrentDictionary<long, Func<long, ITelegramBotClient, Message, Task>> _userHandlerNames;
 
         public bool IsCatch;
 
-        public static CatcherUserInput Instance
+        public static CatcherUserMessageInput Instance
         {
             get
             {
@@ -28,7 +28,7 @@ namespace TelegramChatBot.Global
             }
         }
 
-        private CatcherUserInput() {
+        private CatcherUserMessageInput() {
             _userHandlerNames = new ConcurrentDictionary<long, Func<long, ITelegramBotClient, Message, Task>>();
         }
 
