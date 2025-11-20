@@ -41,7 +41,7 @@ namespace TelegramChatBot.Managers
 
             if (CatcherUserMessageInput.Instance.IsCatch)
             {
-               if(await TryCatchUserInput(userId, botClient, message))
+               if(await TryCatchUserMessageInput(userId, botClient, message))
                     return;
             }
 
@@ -110,3 +110,4 @@ namespace TelegramChatBot.Managers
         }
     }
 }
+
