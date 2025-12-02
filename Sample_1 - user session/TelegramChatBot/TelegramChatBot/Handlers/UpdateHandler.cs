@@ -31,7 +31,7 @@ namespace TelegramChatBot.Handlers
             {
                 Logger.Instance.Log($"UpdateHandler.ProcessUserMessageRequest(Exception): {ex.Message}", LogLevel.Error);
 
-                await botClient.SendMessage(
+                botClient.SendMessage(
                     t_chat.Id,
                     "Возникла ошибка на сервере ..."
                     );
@@ -57,7 +57,7 @@ namespace TelegramChatBot.Handlers
             {
                 Logger.Instance.Log($"UpdateHandler.ProcessUserCallbackRequest(Exception): {ex.Message}", LogLevel.Error);
 
-                await botClient.SendMessage(
+                botClient.SendMessage(
                     t_chat.Id,
                     "Возникла ошибка на сервере ..."
                     );
@@ -93,6 +93,7 @@ namespace TelegramChatBot.Handlers
         }
     }
 }
+
 
 
 
