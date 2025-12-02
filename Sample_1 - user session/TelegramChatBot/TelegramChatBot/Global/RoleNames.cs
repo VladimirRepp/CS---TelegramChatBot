@@ -2,8 +2,9 @@
 {
     public static class RoleNames
     {
-        public static string GUEST = "Guest";
-        public static string TEACHER = "Teacher";
-        public static string STUDENT = "Student";
+        public readonly static string GUEST = "Guest";
+        public readonly static string TEACHER = "Teacher";
+        public readonly static string STUDENT = "Student";
     }
 }
+
