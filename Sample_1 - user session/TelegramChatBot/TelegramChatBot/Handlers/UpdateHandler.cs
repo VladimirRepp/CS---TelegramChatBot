@@ -7,7 +7,7 @@ namespace TelegramChatBot.Handlers
 {
     public class UpdateHandler
     {
-        private CommandHandlerManager? _commandHandlerManager = null;
+        private readonly CommandHandlerManager? _commandHandlerManager = null;
 
         public UpdateHandler(CommandHandlerManager commandHandler)
         {
@@ -91,5 +91,6 @@ namespace TelegramChatBot.Handlers
         }
     }
 }
+
 
 
