@@ -18,8 +18,10 @@ namespace TelegramChatBot.Handlers
         {
             var t_chat = update.Message.Chat;
             var t_user = update.Message.From;
+            var t_message = update.Message.Text;
+            
 
-            Logger.Instance.Log($"{t_user.FirstName} ({t_user.Id}) написал сообщение: {update.Message.Text}");
+            Logger.Instance.Log($"{t_user.FirstName} ({t_user.Id}) написал сообщение: {t_message}");
 
             try
             {
@@ -91,6 +93,7 @@ namespace TelegramChatBot.Handlers
         }
     }
 }
+
 
 
 
