@@ -2,8 +2,9 @@
 {
     public static class CurrentStateNames
     {
-        public static string START = "MainMenu";
-        public static string DEFAULT = "MainMenu";
-        public static string MAIN_MENU = "MainMenu";
+        public readonly static string START = "MainMenu";
+        public readonly static string DEFAULT = "MainMenu";
+        public readonly static string MAIN_MENU = "MainMenu";
     }
 }
+
