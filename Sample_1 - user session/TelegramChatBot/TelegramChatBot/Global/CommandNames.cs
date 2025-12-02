@@ -3,8 +3,9 @@
     public static class CommandNames
     {
         // === Command Names For Common === //
-        public static string MENU = "/menu";
-        public static string START = "/start";
-        public static string HELP = "/help";
+        public readonly static string MENU = "/menu";
+        public readonly static string START = "/start";
+        public readonly static string HELP = "/help";
     }
 }
+
