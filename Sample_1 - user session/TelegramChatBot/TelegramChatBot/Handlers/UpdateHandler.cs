@@ -74,14 +74,14 @@ namespace TelegramChatBot.Handlers
                 long userId = update.Message.From.Id;
                 // var t_chat = update.Message.Chat;
 
-                Task.Run(() => ProcessUserMessageRequest(userId, botClient, update));
+                ProcessUserMessageRequest(userId, botClient, update);
             }
             else if (update.CallbackQuery is not null)
             {
                 long userId = update.CallbackQuery.From.Id;
                 // var t_chat = update.CallbackQuery.Message.Chat;
 
-                Task.Run(() => ProcessUserCallbackRequest(userId, botClient, update));
+                ProcessUserCallbackRequest(userId, botClient, update);
             }
             else
             {
@@ -91,4 +91,5 @@ namespace TelegramChatBot.Handlers
         }
     }
 }
+
 
