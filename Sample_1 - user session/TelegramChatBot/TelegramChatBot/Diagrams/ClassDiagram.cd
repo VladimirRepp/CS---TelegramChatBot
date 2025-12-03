@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="TelegramChatBot.Commands.BaseCommands" Collapsed="true">
+    <Position X="11.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQQAAAAAAAAAAAAAAAAAEAABAAAAAAAAACAAABCAAgA=</HashCode>
+      <FileName>Commands\BaseCommands.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TelegramChatBot.Commands.CommonCommands" Collapsed="true">
+    <Position X="8.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACA=</HashCode>
+      <FileName>Commands\CommonCommands.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TelegramChatBot.Commands.LoginMainMenuCommands" Collapsed="true">
+    <Position X="10.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAAAAABAAAAAAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Commands\LoginMainMenuCommands.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TelegramChatBot.Commands.StudentMainMenuCommands" Collapsed="true">
+    <Position X="12.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAQAAAAAAAAAAAAAAAAAAAAAAEACBAEAAAAAAAA=</HashCode>
+      <FileName>Commands\StudentMainMenuCommands.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TelegramChatBot.Commands.TeacherMainMenuCommands" Collapsed="true">
+    <Position X="15" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAQAAAAAAAAAAAAAAAAAAAAAAEACBAEAAAAAAAA=</HashCode>
+      <FileName>Commands\TeacherMainMenuCommands.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TelegramChatBot.Global.ButtonNames" Collapsed="true">
+    <Position X="17.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACEAA0AAAAAIgAAAAAAAAAAAcAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Global\ButtonNames.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TelegramChatBot.Global.CatcherUserMessageInput" Collapsed="true">
+    <Position X="19.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAQAAAAAIAAAAAAAAAAAAQIAAAAQQAAABAAAAA=</HashCode>
+      <FileName>Global\CatcherUserMessageInput.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TelegramChatBot.Global.CommandNames" Collapsed="true">
+    <Position X="21" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>Global\CommandNames.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TelegramChatBot.Global.CurrentStateNames" Collapsed="true">
+    <Position X="19.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAQAAgAAAA=</HashCode>
+      <FileName>Global\CurrentStateNames.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TelegramChatBot.Global.RoleNames" Collapsed="true">
+    <Position X="22.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Global\RoleNames.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ChatBot.Global.FacadeBotClient" Collapsed="true">
+    <Position X="17.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAAAgAAAAAAABAQAIAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Global\FacadeBotClient.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TelegramChatBot.Managers.CommandHandlerManager" Collapsed="true">
+    <Position X="17.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BQQAAACAAAAgAAAJAAAAAAAAIAAAAAAAAgAAAAABAAA=</HashCode>
+      <FileName>Managers\CommandHandlerManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TelegramChatBot.Managers.UserSessionManager" Collapsed="true">
+    <Position X="19.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACBAAAAAAAAAAAAAAAAAAEAABAgAAAAAAAgAAA=</HashCode>
+      <FileName>Managers\UserSessionManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Utils.ConsoleCommands" Collapsed="true">
+    <Position X="17.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABI=</HashCode>
+      <FileName>Utils\ConsoleCommands.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Utils.ConsoleHelper" Collapsed="true">
+    <Position X="19.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Utils\ConsoleHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Utils.Logger" Collapsed="true">
+    <Position X="19.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAAAAAAAAwAAAAAQAAACEAAAAA=</HashCode>
+      <FileName>Utils\Logger.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TelegramChatBot.Models.UserSession" Collapsed="true">
+    <Position X="17.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAEAAAACAAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\UserSession.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TelegramChatBot.Main.Program" Collapsed="true">
+    <Position X="17.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgAAAEACAAAAAAAIgAAAAAAFAAAAAA=</HashCode>
+      <FileName>Main\Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TelegramChatBot.Handlers.ErrorHandler" Collapsed="true">
+    <Position X="19.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Handlers\ErrorHandler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TelegramChatBot.Handlers.UpdateHandler" Collapsed="true">
+    <Position X="17.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAJAEAAAAAAAAAAAAAAAAEAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Handlers\UpdateHandler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="Utils.LogLevel" Collapsed="true">
+    <Position X="17.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAABAAAAAAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>Utils\Logger.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
