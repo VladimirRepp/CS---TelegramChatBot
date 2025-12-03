@@ -17,6 +17,11 @@ Description:
   * user input interceptor.
 - - Sample_2: simple example of message processing, coding, and sending a response
 
+Class Diagrams (Sample_1)
+=====
+<img width="1601" height="764" alt="image" src="https://github.com/user-attachments/assets/4aaed778-f4b8-4e2d-8609-298c1284cd26" />
+
+
 Contact with the developer
 =====
 telegram @Vladimir_Repp
