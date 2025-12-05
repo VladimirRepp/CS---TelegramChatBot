@@ -45,11 +45,11 @@ namespace TelegramChatBot
                 switch (update.Type)
                 {
                     case UpdateType.Message:
-                        OnMessageHandler(update);
+                        MessageHandler(update);
                         break;
 
                     case UpdateType.CallbackQuery:
-                        OnCallbackQueryHandler(update);
+                        CallbackQueryHandler(update);
                         break;
                 }
             }
@@ -78,7 +78,7 @@ namespace TelegramChatBot
             }
         }
 
-        private static async Task OnCallbackQueryHandler(Update update)
+        private static async Task CallbackQueryHandler(Update update)
         {
             var callbackQuery = update.CallbackQuery;
             var user = callbackQuery.From;
@@ -123,7 +123,7 @@ namespace TelegramChatBot
             }
         }
 
-        private static async Task OnMessageHandler(Update update)
+        private static async Task MessageHandler(Update update)
         {
             Message? message = update.Message;
             User? user = message?.From;
@@ -265,4 +265,5 @@ namespace TelegramChatBot
         }
     }
 }
+
 
