@@ -63,14 +63,14 @@ namespace TelegramChatBot
         {
             try
             {
-                var ErrorMessage = exception switch
+                var errorMessage = exception switch
                 {
                     ApiRequestException apiRequestException
                         => $"Telegram API Error:\n[{apiRequestException.ErrorCode}]\n{apiRequestException.Message}",
                     _ => exception.ToString()
                 };
 
-                Console.WriteLine($"ErrorHandler: {ErrorMessage}");
+                Console.WriteLine($"ErrorHandler: {errorMessage}");
             }
             catch (Exception ex)
             {
@@ -265,3 +265,4 @@ namespace TelegramChatBot
         }
     }
 }
+
