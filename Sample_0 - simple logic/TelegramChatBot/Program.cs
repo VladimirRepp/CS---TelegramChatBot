@@ -95,9 +95,8 @@ namespace TelegramChatBot
             switch (callbackQuery.Data)
             {
                 case "button_2":
-                await _botClient.AnswerCallbackQuery(callbackQuery.Id);
+                    await _botClient.AnswerCallbackQuery(callbackQuery.Id);
                     
-
                     await _botClient.SendMessage(
                         chat.Id,
                         $"Вы нажали на {callbackQuery.Data}"
@@ -266,6 +265,7 @@ namespace TelegramChatBot
         }
     }
 }
+
 
 
 
