@@ -82,7 +82,8 @@ namespace TelegramChatBot
         {
             var callbackQuery = update.CallbackQuery;
             var user = callbackQuery.From;
-
+            var chat = callbackQuery.Message.Chat;
+            
             if (callbackQuery == null)
             {
                 throw new Exception($"OnCallbackQuery: callbackQuery is null!");
@@ -90,12 +91,12 @@ namespace TelegramChatBot
 
             Console.WriteLine($"{user.Username} ({user.Id}) нажал кнопку: {callbackQuery.Data}");
 
-            var chat = callbackQuery.Message.Chat;
 
             switch (callbackQuery.Data)
             {
                 case "button_2":
-                    await _botClient.AnswerCallbackQuery(callbackQuery.Id);
+                await _botClient.AnswerCallbackQuery(callbackQuery.Id);
+                    
 
                     await _botClient.SendMessage(
                         chat.Id,
@@ -265,5 +266,6 @@ namespace TelegramChatBot
         }
     }
 }
+
 
 
